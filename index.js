@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const { App } = require("@slack/bolt");
 const sarveshId = "U081D39L4MD";
-const targetChannelId = "C08LLBLUVPH, C0P5NE354";
+const targetChannelId = "C0BCHFZBYMT";
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -23,7 +23,7 @@ app.command("/tarfish-help", async ({ ack, respond }) => {
   await respond({
     text: `
     𓆝 𓆟 𓆞
-*𓆞 general commands:*
+*✦ general commands:*
 \`/tarfish-ping\` - check bot latency
 \`/tarfish-help\` - open this help menu
 `
@@ -79,6 +79,9 @@ app.action("ping_sarvesh", async ({ ack, body, client }) => {
       channel: targetChannelId,
       text: `SARVESH GET HERE NOWW <@${sarveshId}>!`
     });
+  await respond({
+  replace_original: true,
+});
   } catch (error) {
     console.error(error);
   }
