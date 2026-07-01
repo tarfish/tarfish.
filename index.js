@@ -26,6 +26,9 @@ app.command("/tarfish-help", async ({ ack, respond }) => {
 *✦ general commands:*
 \`/tarfish-ping\` - check bot latency
 \`/tarfish-help\` - open this help menu
+
+✦ *fun commands:*
+\`/tarfish-greet\` - greet the user
 `
   });
 });
@@ -92,7 +95,6 @@ app.action("ping_sarvesh", async ({ ack, body, client }) => {
     console.error(error);
   }
 });
-
 
 app.event("app_mention", async ({ event, client }) => {
   try {
