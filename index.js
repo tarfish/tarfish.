@@ -66,13 +66,13 @@ app.event("member_joined_channel", async ({ event, client }) => {
           ]
         }
       ]
-});
+    });
 
     await client.chat.postMessage({
       channel: event.channel,
       thread_ts: welcomeMessage.ts,
       text: `here we have a very long talk about this channel, which you probably didn't even sign up for :hs:\n\n*✦ channel lore:*\nthis channel was made in april 2025 when hackclub's <#C088UF12N1Z> event was happening. it was mainly used back then to communicate with his close friends about the chinese culture and tourism! it has kinda evolved a lot since then!\n\n*✦ channel use:*\nit's mostly used by sarvesh to talk about his life and have fun with huddles (maybe one day when he decides to actually reveal his voice :wink:)\n\n*✦ THANK YOUS :YAY::*\n(from yours truly)\nthank you so much to the people who keep me on track and prevent me from procrastinating from the things that actually matter, a HUGE thank you to the friends i made along the way, and lastly, thank you to *YOU* for taking the effort to join the channel and support me!`
-})
+    });
 
   } catch (error) {
     console.error(error);
@@ -93,6 +93,18 @@ app.action("ping_sarvesh", async ({ ack, body, client }) => {
   }
 });
 
+
+app.event("app_mention", async ({ event, client }) => {
+  try {
+    await client.chat.postMessage({
+      channel: event.channel,
+      thread_ts: event.ts,
+      text: `hey, i'm tarfish! use \`/tarfish-help\` to see what i can do!`
+    });
+  } catch (error) {
+    console.error(error);
+  }
+});
 
 (async () => {
   await app.start();
