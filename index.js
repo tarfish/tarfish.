@@ -10,7 +10,7 @@ const Join = require("./.js Files/Join");
 const Ping = require("./.js Files/Ping");
 const Send1 = require("./.js Files/Send1");
 const Send2 = require("./.js Files/Send2");
-const Schedule = require("./.js Files/Schedule");
+const Morning = require("./.js Files/Morning");
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -25,7 +25,7 @@ Join(app, sarveshId, targetChannelIds);
 Ping(app);
 Send1(app, sarveshId);
 Send2(app, sarveshId);
-Schedule(app, sarveshId);
+Morning(app, targetChannelIds);
 
 (async () => {
   await app.start();
