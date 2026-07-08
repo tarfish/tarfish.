@@ -7,9 +7,6 @@ module.exports = function registerHelp(app) {
 *✦ general commands:*
 \`/tarfish-ping\` - check bot latency
 \`/tarfish-help\` - open this help menu
-
-✦ *fun commands:*
-\`/tarfish-greet\` - greet the user
 𓆝 𓆟 𓆞
 `
     });
